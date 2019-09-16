@@ -1,30 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_content"
+<android.support.constraint.ConstraintLayout
+  android:id="@+id/main_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#F5F6F7"
+  android:fitsSystemWindows="true">
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/one"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-<android.support.design.widget.AppBarLayout
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+    <TextView
+      android:id="@+id/temp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="56dp"
+      android:fontFamily="sans-serif-black"
+      android:text="20°"
+      android:textColor="#2A2A2A"
+      android:textSize="96sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+      android:id="@+id/name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="sans-serif-thin"
+      android:paddingBottom="67dp"
+      android:text="banglore"
+      android:textColor="#556799"
+      android:textSize="36sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/temp"/>
+
+  </android.support.constraint.ConstraintLayout>
+
+  <FrameLayout
+    android:id="@+id/frame"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
-    android:fitsSystemWindows="true"
-    app:layout_scrollFlags="scroll"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/one">
 
-    <ImageView
-        android:scaleType="fitXY"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:src="@drawable/banner"/>
+  </FrameLayout>
 
-</android.support.design.widget.AppBarLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v7.widget.RecyclerView>
-</android.support.design.widget.CoordinatorLayout>
+</android.support.constraint.ConstraintLayout>
